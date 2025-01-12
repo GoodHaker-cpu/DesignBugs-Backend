@@ -20,11 +20,6 @@ endpoints:
     # Accepted values: Project|Organization|Public(Default).
     networkVisibilities:
       - Public
-      - Organization
-    # +optional Path to the schema definition file. Defaults to wild card route if not provided
-    # This is only applicable to REST or WS endpoint types.
-    # The path should be relative to the docker context.
-    schemaFilePath: openapi.yaml
 
 # +optional Outgoing connection details for the component.
 dependencies:
@@ -32,5 +27,5 @@ dependencies:
   connectionReferences:
     # +required Name of the connection.
     - name: smtp-server
-      # +required service identifier of the dependent component.
-      resourceRef: service:/SMTPService/v1/public
+      # +required Service identifier of the dependent component.
+      resourceRef: service:/mailer/smtp-server/1/PUBLIC
